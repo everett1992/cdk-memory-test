@@ -2,12 +2,15 @@ const mod = require('node:module')
 
 const specs = new Set()
 process.on('exit', () => {
-  console.log("loaded files", specs.size)
+  for (const spec of Array.from(specs).sort()) {
+    process.stdout.write(spec + '\n')
+  }
 })
 
 mod.registerHooks({
   resolve(spec, context, next) {
-    specs.add(spec)
-    return next(spec, context)
+    const ret =  next(spec, context)
+    specs.add(JSON.stringify(ret))
+    return ret
   }
 })
