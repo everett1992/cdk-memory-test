@@ -6,5 +6,5 @@ function mb(n) {
 process.on('exit', () => {
   global.gc?.()
   const { rss, heapTotal } = process.memoryUsage()
-  console.log(`rss ${mb(rss)}\theap ${mb(heapTotal)}`)
+  console.log(`rss ${mb(rss)}mb\theap ${mb(heapTotal)}mb`)
 })

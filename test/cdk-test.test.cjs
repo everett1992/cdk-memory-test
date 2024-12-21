@@ -1,6 +1,6 @@
-import * as cdk from 'aws-cdk-lib';
-import { Template, Match } from 'aws-cdk-lib/assertions';
-import * as CdkTest from '../lib/cdk-test-stack.js';
+const cdk = require('aws-cdk-lib');
+const { Template, Match } = require('aws-cdk-lib/assertions')
+const CdkTest = require('../lib/cdk-test-stack.cjs')
 
 test('SQS Queue and SNS Topic Created', () => {
   const app = new cdk.App();
