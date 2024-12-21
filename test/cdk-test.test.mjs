@@ -1,4 +1,4 @@
-import { App } from 'aws-cdk-lib'
+import { App } from 'aws-cdk-lib/core'
 import { Template } from 'aws-cdk-lib/assertions';
 import { CdkTestStack } from '../lib/cdk-test-stack.mjs'
 
